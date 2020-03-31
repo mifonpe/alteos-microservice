@@ -10,13 +10,13 @@ on:
       - master
       - develop
     paths:
-      - 'charts/*'
+      - 'charts/**'
   pull_request:
     branches: 
       - master
       - develop
     paths:
-      - 'charts/*'
+      - 'charts/**'
 jobs:
   build:
     runs-on: self-hosted
@@ -24,8 +24,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Helm lint for Helm Charts
       env:
-        - HELM_URL=https://get.helm.sh
-        - HELM_TAR=helm-v3.1.2-linux-amd64.tar.gz
+        - HELM_URL: https://get.helm.sh
+        - HELM_TAR: helm-v3.1.2-linux-amd64.tar.gz
       run: |
         wget -q ${HELM_URL}/${HELM_TAR}
         tar xzfv ${HELM_TAR}
