@@ -18,16 +18,10 @@ on:
     paths:
       - '/charts*'
 jobs:
-
   build:
-
     runs-on: self-hosted
-
-
     steps:
-
     - uses: actions/checkout@v2
-
     - name: Helm lint for Helm Charts
       env:
         - HELM_URL=https://get.helm.sh
