@@ -1,0 +1,26 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: microservice-dev
+  namespace: dev
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:dev-*
+spec:
+  releaseName: microserice-dev
+  chart:
+    git: git@github.com:mifonpe/alteos-microservice
+    path: charts/microservice-demo
+    ref: master
+  values:
+    java:
+      options: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
+    zipkin: 
+      enabled:  false
+      url: zipkin.zipkin.svc.cluster.local
+    frontend:
+      replicas: 1
+    loadtest:
+      replicas: 2
+      enabled: false
