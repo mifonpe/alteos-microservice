@@ -23,16 +23,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Helm lint for Helm Charts
-      env:
-        HELM_URL: https://get.helm.sh
-        HELM_TAR: helm-v3.1.2-linux-amd64.tar.gz
       run: |
-        wget -q ${HELM_URL}/${HELM_TAR}
-        tar xzfv ${HELM_TAR}
-        mv linux-amd64/helm /usr/local/bin/helm
         for chart in `ls ./charts`; do
           helm lint ./charts/${chart}
           if [ $? != 0 ]; then
+            echo "${chart} didn't pass the lint check!"
             exit 1
           fi
         done
