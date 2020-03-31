@@ -10,13 +10,13 @@ on:
       - master
       - develop
     paths:
-      - '/charts*'
+      - 'charts/*'
   pull_request:
     branches: 
       - master
       - develop
     paths:
-      - '/charts*'
+      - 'charts/*'
 jobs:
   build:
     runs-on: self-hosted
