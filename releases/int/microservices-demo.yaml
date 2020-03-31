@@ -4,15 +4,15 @@ kind: HelmRelease
 metadata:
   name: microservice-int
   namespace: int
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:dev-*
+  #annotations:
+    #fluxcd.io/automated: "true"
+    #filter.fluxcd.io/chart-image: glob:dev-*
 spec:
   releaseName: microservice-int
   chart:
-    git: git@github.com:mifonpe/alteos-microservice
-    path: charts/microservice-demo
-    ref: master
+    git: git@github.com:mifonpe/microservice-demo
+    path: ./
+    ref: int
   values:
     java:
       options: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom

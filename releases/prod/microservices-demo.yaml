@@ -4,14 +4,14 @@ kind: HelmRelease
 metadata:
   name: microservice-prod
   namespace: prod
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:dev-*
+  #annotations:
+    #fluxcd.io/automated: "true"
+    #filter.fluxcd.io/chart-image: glob:dev-*
 spec:
   releaseName: microservice-prod
   chart:
-    git: git@github.com:mifonpe/alteos-microservice
-    path: charts/microservice-demo
+    git: git@github.com:mifonpe/microservice-demo
+    path: ./
     ref: master
   values:
     java:
