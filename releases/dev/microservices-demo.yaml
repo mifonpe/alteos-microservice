@@ -8,7 +8,7 @@ metadata:
     #fluxcd.io/automated: "true"
     #filter.fluxcd.io/chart-image: glob:dev-*
 spec:
-  releaseName: microserice-dev
+  releaseName: microservice-dev
   chart:
     git: git@github.com:mifonpe/microservice-demo
     path: ./
