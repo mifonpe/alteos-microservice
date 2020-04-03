@@ -7,8 +7,6 @@ metadata:
   #annotations:
     #fluxcd.io/automated: "true"
     #filter.fluxcd.io/chart-image: glob:dev-*
-  annotations:
-    fluxcd.io/automated: 'true'
 spec:
   releaseName: microservice-dev
   chart:
