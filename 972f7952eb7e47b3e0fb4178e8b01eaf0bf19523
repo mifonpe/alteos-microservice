@@ -1,0 +1,1 @@
+{"jobID":"0b2aecc4-09ae-a0de-0e16-31b8833316b5","spec":{"type":"policy","cause":{"Message":"","User":"mfontanilla \u003cmifonpe@gmail.com\u003e"},"spec":{"dev:helmrelease/microservice-dev":{"add":{"automated":"true"},"remove":{}}}},"result":null}
