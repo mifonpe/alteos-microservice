@@ -7,6 +7,8 @@ metadata:
   #annotations:
     #fluxcd.io/automated: "true"
     #filter.fluxcd.io/chart-image: glob:dev-*
+  annotations:
+    fluxcd.io/automated: 'true'
 spec:
   releaseName: microservice-dev
   chart:
@@ -15,56 +17,57 @@ spec:
     ref: develop
   values:
     java:
-      options: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
-    zipkin: 
-      enabled:  false
+      options: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC
+        -Djava.security.egd=file:/dev/urandom
+    zipkin:
+      enabled: false
       url: zipkin.zipkin.svc.cluster.local
     carts:
       enabled: false
       image: weaveworksdemos/carts
-      version: 0.4.8 
+      version: 0.4.8
       database:
-          image: mongo
+        image: mongo
       persistence:
-          enabled: true
-          size: 1Gi
-          storageclass: default 
+        enabled: true
+        size: 1Gi
+        storageclass: default
     orders:
       enabled: false
       image: weaveworksdemos/orders
       version: 0.4.7
       persistence:
+        enabled: true
+        size: 1Gi
+        storageclass: default
+      database:
+        image: mongo
+        persistence:
           enabled: true
           size: 1Gi
-          storageclass: default 
-      database:
-          image: mongo
-          persistence:
-              enabled: true
-              size: 1Gi
-              storageclass: default 
+          storageclass: default
     catalogue:
       enabled: true
       image: weaveworksdemos/catalogue
       version: 0.3.5
-      database: 
-          image: weaveworksdemos/catalogue-db
-          version: 0.3.0
-          persistence:
-              enabled: true
-              size: 1Gi
-              storageclass: default 
+      database:
+        image: weaveworksdemos/catalogue-db
+        version: 0.3.0
+        persistence:
+          enabled: true
+          size: 1Gi
+          storageclass: default
     user:
       enabled: false
       image: weaveworksdemos/user
       version: 0.4.4
-      database: 
-          image: weaveworksdemos/user-db
-          version: 0.3.0
-          persistence:
-              enabled: true
-              size: 1Gi
-              storageclass: default 
+      database:
+        image: weaveworksdemos/user-db
+        version: 0.3.0
+        persistence:
+          enabled: true
+          size: 1Gi
+          storageclass: default
     queuemaster:
       enabled: false
       image: weaveworksdemos/queue-master
@@ -76,15 +79,15 @@ spec:
     sessiondb:
       enabled: false
       image: redis
-      version: alpine 
+      version: alpine
     shipping:
       enabled: false
       image: weaveworksdemos/shipping
-      version: 0.4.8 
+      version: 0.4.8
       persistence:
-          enabled: true
-          size: 1Gi
-          storageclass: default 
+        enabled: true
+        size: 1Gi
+        storageclass: default
     payment:
       enabled: false
       image: weaveworksdemos/payment
@@ -96,5 +99,5 @@ spec:
     loadtest:
       replicas: 2
       enabled: false
-        
-          
+
+
