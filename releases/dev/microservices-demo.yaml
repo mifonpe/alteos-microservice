@@ -6,6 +6,7 @@ metadata:
   namespace: dev
 spec:
   releaseName: microservice-dev
+  forceUpgrade: true
   chart:
     git: git@github.com:mifonpe/microservice-demo
     path: ./
