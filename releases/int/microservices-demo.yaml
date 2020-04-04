@@ -17,9 +17,9 @@ spec:
     carts:
       enabled: false
     orders:
-      enabled: true
+      enabled: false
     catalogue:
-      enabled: true
+      enabled: false
     user:
       enabled: false
     queuemaster:
