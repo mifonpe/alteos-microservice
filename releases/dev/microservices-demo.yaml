@@ -15,25 +15,27 @@ spec:
     zipkin: 
       enabled:  false
     carts:
-      enabled: true
+      enabled: false
     orders:
-      enabled: true
+      enabled: false
     catalogue:
       enabled: true
     user:
-      enabled: true
+      enabled: false
     queuemaster:
-      enabled: true
+      enabled: false
     rabbitmq:
-      enabled: true
+      enabled: false
     sessiondb:
-      enabled: true
+      enabled: false
     shipping:
-      enabled: true
+      enabled: false
     payment:
-      enabled: true
+      enabled: false
     loadtest:
       replicas: 2
       enabled: false
+    frontend:
+      enabled: true
 
 

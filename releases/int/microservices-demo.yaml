@@ -11,7 +11,7 @@ spec:
     path: ./
     ref: int
   values:
-    environment: int
+    environment: dev
     zipkin: 
       enabled:  false
     carts:
@@ -20,6 +20,8 @@ spec:
       enabled: false
     catalogue:
       enabled: true
+    user:
+      enabled: false
     queuemaster:
       enabled: false
     rabbitmq:
@@ -33,4 +35,6 @@ spec:
     loadtest:
       replicas: 2
       enabled: false
+    frontend:
+      enabled: true
     
