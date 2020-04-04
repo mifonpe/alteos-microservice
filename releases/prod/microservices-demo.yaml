@@ -23,9 +23,9 @@ spec:
     user:
       enabled: true
     queuemaster:
-      enabled: false
+      enabled: true
     rabbitmq:
-      enabled: false
+      enabled: true
     sessiondb:
       enabled: true
     shipping:
