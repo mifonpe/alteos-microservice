@@ -4,9 +4,6 @@ kind: HelmRelease
 metadata:
   name: microservice-prod
   namespace: prod
-  #annotations:
-    #fluxcd.io/automated: "true"
-    #filter.fluxcd.io/chart-image: glob:dev-*
 spec:
   releaseName: microservice-prod
   chart:
@@ -14,13 +11,25 @@ spec:
     path: ./
     ref: master
   values:
-    java:
-      options: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
+    environment: dev
     zipkin: 
       enabled:  false
-      url: zipkin.zipkin.svc.cluster.local
-    frontend:
-      replicas: 1
+    carts:
+      enabled: false
+    orders:
+      enabled: false
+    catalogue:
+      enabled: true
+    queuemaster:
+      enabled: false
+    rabbitmq:
+      enabled: false
+    sessiondb:
+      enabled: false
+    shipping:
+      enabled: false
+    payment:
+      enabled: false
     loadtest:
       replicas: 2
       enabled: false
