@@ -21,7 +21,7 @@ spec:
     catalogue:
       enabled: true
     user:
-      enabled: false
+      enabled: true
     queuemaster:
       enabled: false
     rabbitmq:
@@ -31,7 +31,7 @@ spec:
     shipping:
       enabled: false
     payment:
-      enabled: false
+      enabled: true
     loadtest:
       replicas: 2
       enabled: false
