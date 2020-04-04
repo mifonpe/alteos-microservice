@@ -20,6 +20,8 @@ spec:
       enabled: true
     catalogue:
       enabled: true
+    user:
+      enabled: false  
     queuemaster:
       enabled: false
     rabbitmq:
