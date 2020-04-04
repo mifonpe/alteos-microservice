@@ -21,17 +21,17 @@ spec:
     catalogue:
       enabled: true
     user:
-      enabled: false
+      enabled: true
     queuemaster:
-      enabled: false
+      enabled: true
     rabbitmq:
-      enabled: false
+      enabled: true
     sessiondb:
-      enabled: false
+      enabled: true
     shipping:
-      enabled: false
+      enabled: true
     payment:
-      enabled: false
+      enabled: true
     loadtest:
       replicas: 2
       enabled: false
