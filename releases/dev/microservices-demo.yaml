@@ -21,7 +21,7 @@ spec:
     catalogue:
       enabled: true
     user:
-      enabled: false  
+      enabled: true 
     queuemaster:
       enabled: false
     rabbitmq:
