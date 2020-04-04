@@ -17,19 +17,19 @@ spec:
     carts:
       enabled: true
     orders:
-      enabled: true
+      enabled: false
     catalogue:
       enabled: true
     user:
       enabled: true
     queuemaster:
-      enabled: true
+      enabled: false
     rabbitmq:
-      enabled: true
+      enabled: false
     sessiondb:
       enabled: true
     shipping:
-      enabled: true
+      enabled: false
     payment:
       enabled: true
     loadtest:
