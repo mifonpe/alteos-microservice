@@ -15,11 +15,11 @@ spec:
     zipkin: 
       enabled:  false
     carts:
-      enabled: false
+      enabled: true
     orders:
       enabled: false
     catalogue:
-      enabled: false
+      enabled: true
     user:
       enabled: false
     queuemaster:
