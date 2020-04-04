@@ -11,7 +11,7 @@ spec:
     path: ./
     ref: int
   values:
-    environment: dev
+    environment: int
     zipkin: 
       enabled:  false
     carts:
