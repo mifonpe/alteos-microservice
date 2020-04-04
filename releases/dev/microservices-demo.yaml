@@ -33,5 +33,5 @@ spec:
     loadtest:
       replicas: 2
       enabled: false
-        
-          
+
+
