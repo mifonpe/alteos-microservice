@@ -19,7 +19,7 @@ spec:
     orders:
       enabled: false
     catalogue:
-      enabled: true
+      enabled: false
     user:
       enabled: false
     queuemaster:
