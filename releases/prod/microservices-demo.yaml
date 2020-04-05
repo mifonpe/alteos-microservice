@@ -12,28 +12,87 @@ spec:
     ref: master
   values:
     environment: prod
+    java:
+        options: -Xms64m -Xmx128m -XX:PermSize=32m -XX:MaxPermSize=64m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
     zipkin: 
-      enabled:  false
+        enabled:  false
+        url: zipkin.zipkin.svc.cluster.local
     carts:
-      enabled: true
+        enabled: true
+        image: weaveworksdemos/carts
+        version: 0.4.7 
+        database:
+            image: mongo
+            persistence:
+                enabled: false
+                size: 1Gi
+                storageclass: gp2
     orders:
-      enabled: false
+        enabled: false
+        image: weaveworksdemos/orders
+        version: 0.4.7
+        persistence:
+            enabled: true
+            size: 1Gi
+            storageclass: gp2
+        database:
+            image: mongo
+            persistence:
+                enabled: true
+                size: 1Gi
+                storageclass: gp2 
     catalogue:
-      enabled: true
+        enabled: true
+        image: weaveworksdemos/catalogue
+        version: 0.3.5
+        database: 
+            image: weaveworksdemos/catalogue-db
+            version: 0.3.0
+            persistence:
+                enabled: true
+                size: 1Gi
+                storageclass: gp2 
     user:
-      enabled: true
+        enabled: true
+        image: weaveworksdemos/user
+        version: 0.4.4
+        database: 
+            image: weaveworksdemos/user-db
+            version: 0.3.0
+            persistence:
+                enabled: true
+                size: 1Gi
+                storageclass: gp2 
     queuemaster:
-      enabled: false
+        enabled: false
+        image: weaveworksdemos/queue-master
+        version: 0.3.1
     rabbitmq:
-      enabled: false
+        enabled: false
+        image: rabbitmq
+        version: 3.6.8
     sessiondb:
-      enabled: true
+        enabled: true
+        image: redis
+        version: alpine 
     shipping:
-      enabled: false
+        enabled: false
+        image: weaveworksdemos/shipping
+        version: 0.4.8 
+        persistence:
+            enabled: false
+            size: 1Gi
+            storageclass: gp2 
     payment:
-      enabled: true
-    loadtest:
-      replicas: 2
-      enabled: false
+        enabled: true
+        image: weaveworksdemos/payment
+        version: 0.4.3
     frontend:
-      enabled: true
+        enabled: true
+        image: weaveworksdemos/front-end
+        version: 0.3.12
+        replicas: 1
+    loadtest:
+        replicas: 2
+        enabled: false
+       
