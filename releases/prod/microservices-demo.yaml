@@ -90,7 +90,7 @@ spec:
     frontend:
         enabled: true
         image: weaveworksdemos/front-end
-        version: 0.3.11
+        version: 0.3.12
         replicas: 1
     loadtest:
         replicas: 1
