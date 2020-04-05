@@ -28,7 +28,7 @@ spec:
                 size: 1Gi
                 storageclass: gp2
     orders:
-        enabled: false
+        enabled: true
         image: weaveworksdemos/orders
         version: 0.4.7
         persistence:
@@ -91,7 +91,7 @@ spec:
         enabled: true
         image: weaveworksdemos/front-end
         version: 0.3.12
-        replicas: 1
+        replicas: 2
     loadtest:
         replicas: 2
         enabled: false
