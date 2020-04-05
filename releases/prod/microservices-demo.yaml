@@ -18,17 +18,17 @@ spec:
         enabled:  false
         url: zipkin.zipkin.svc.cluster.local
     carts:
-        enabled: true
+        enabled: false
         image: weaveworksdemos/carts
         version: 0.4.7 
         database:
             image: mongo
             persistence:
-                enabled: false
+                enabled: true
                 size: 1Gi
                 storageclass: gp2
     orders:
-        enabled: true
+        enabled: false
         image: weaveworksdemos/orders
         version: 0.4.7
         persistence:
@@ -49,11 +49,11 @@ spec:
             image: weaveworksdemos/catalogue-db
             version: 0.3.0
             persistence:
-                enabled: false
+                enabled: true
                 size: 1Gi
                 storageclass: gp2 
     user:
-        enabled: true
+        enabled: false
         image: weaveworksdemos/user
         version: 0.4.4
         database: 
@@ -64,19 +64,19 @@ spec:
                 size: 1Gi
                 storageclass: gp2 
     queuemaster:
-        enabled: true
+        enabled: false
         image: weaveworksdemos/queue-master
         version: 0.3.1
     rabbitmq:
-        enabled: true
+        enabled: false
         image: rabbitmq
         version: 3.6.8
     sessiondb:
-        enabled: true
+        enabled: false
         image: redis
         version: alpine 
     shipping:
-        enabled: true
+        enabled: false
         image: weaveworksdemos/shipping
         version: 0.4.8 
         persistence:
@@ -84,7 +84,7 @@ spec:
             size: 1Gi
             storageclass: gp2 
     payment:
-        enabled: true
+        enabled: false
         image: weaveworksdemos/payment
         version: 0.4.3
     frontend:
