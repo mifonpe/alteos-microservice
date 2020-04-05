@@ -93,6 +93,6 @@ spec:
         version: 0.3.12
         replicas: 2
     loadtest:
-        replicas: 2
+        replicas: 1
         enabled: false
        
